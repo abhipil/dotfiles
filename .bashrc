@@ -124,3 +124,7 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# Default to vim please
+export VISUAL=vim
+export EDITOR="$VISUAL"
+
