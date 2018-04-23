@@ -11,3 +11,9 @@ Plugin 'junegunn/goyo.vim'
 call vundle#end()
 filetype plugin indent on
 
+" Enable highlighting search strings
+set hlsearch
+" Disable highlights until next search
+" Mapped to spacebar
+" https://stackoverflow.com/questions/657447/vim-clear-last-search-highlighting
+nnoremap <Space> :noh<cr>
