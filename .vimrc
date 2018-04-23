@@ -13,6 +13,15 @@ filetype plugin indent on
 
 :let mapleader = " "
 
+" Tabs to spaces
+" https://stackoverflow.com/questions/234564/tab-key-4-spaces-and-auto-indent-after-curly-braces-in-vim/23426067
+set tabstop=4
+set shiftwidth=4
+set expandtab
+
+" Display line number by default
+set nu
+
 " Enable highlighting search strings
 set hlsearch
 " Disable highlights until next search
