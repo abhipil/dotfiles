@@ -25,7 +25,6 @@ set nu
 " Enable highlighting search strings
 set hlsearch
 " Disable highlights until next search
-" Mapped to spacebar
 " https://stackoverflow.com/questions/657447/vim-clear-last-search-highlighting
 nnoremap <leader><Space> :noh<cr>
 
@@ -44,3 +43,6 @@ nnoremap <leader>b :ls<CR>:b
 
 " Delay cts by a few years
 nnoremap ; :
+
+" `V` sources .vimrc
+nnoremap <leader>V :so ~/.vimrc<CR>
