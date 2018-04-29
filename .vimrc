@@ -46,3 +46,19 @@ nnoremap ; :
 
 " `V` sources .vimrc
 nnoremap <leader>V :so ~/.vimrc<CR>
+
+set autoread
+set updatetime=750
+" These are the features required-
+" * Reload buffer, if file changed on drive
+" * Save file to disk, if buffer modified
+"
+" These two commands must work well with each other.
+" * If the file has changed on disk then load it asap unless in Insert Mode.
+" * But if there are unwritten changes, those will be lost immediately.
+" * Therefore write file to disk as soon as text changes.
+" Write normal buffer
+au TextChanged,TextChangedI <buffer> if &l:buftype == '' | write | endif
+" Reload files from disk
+au CursorHold,CursorMoved * checktime
+" https://stackoverflow.com/a/24479186
