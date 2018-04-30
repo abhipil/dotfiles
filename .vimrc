@@ -28,6 +28,7 @@ set nu
 
 " Enable highlighting search strings
 set hlsearch
+set incsearch
 " Disable highlights until next search
 " https://stackoverflow.com/questions/657447/vim-clear-last-search-highlighting
 nnoremap <leader><Space> :noh<cr>
