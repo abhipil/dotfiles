@@ -130,4 +130,3 @@ fi
 # Default to vim please
 export VISUAL=vim
 export EDITOR="$VISUAL"
-

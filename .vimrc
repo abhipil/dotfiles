@@ -13,6 +13,10 @@ filetype plugin indent on
 
 :let mapleader = " "
 
+" Vim only needs the aliases, also check ~/.bash_aliases
+" https://stackoverflow.com/a/18901595
+let $BASH_ENV = "~/.bash_aliases"
+
 " Tabs to spaces
 " https://stackoverflow.com/questions/234564/tab-key-4-spaces-and-auto-indent-after-curly-braces-in-vim/23426067
 set tabstop=4
@@ -35,8 +39,8 @@ match OverLength /\%121v.\+/
 
 " `f` Opens disposable buffer ready to read in `ag`
 " Buffer cannot be written to and will be deleted when left
-" :help buftype bufhidden
-nnoremap <leader>f :e ag<CR>:set bt=nowrite bh=delete<CR>:r !ag 
+" :help buftype
+nnoremap <leader>f :e ag<CR>:set buftype=nowrite bufhidden=delete<CR>:r !gg 
 
 " `b` Lists buffers ready to switch to
 nnoremap <leader>b :ls<CR>:b 
