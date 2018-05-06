@@ -41,7 +41,7 @@ match OverLength /\%121v.\+/
 " `f` Opens disposable buffer ready to read in `ag`
 " Buffer cannot be written to and will be deleted when left
 " :help buftype
-nnoremap <leader>f :e ag<CR>:set buftype=nowrite bufhidden=delete<CR>:r !gg 
+nnoremap <leader>f :e projectsearch<CR>:set buftype=nowrite bufhidden=delete<CR>:r !gg 
 
 " `b` Lists buffers ready to switch to
 nnoremap <leader>b :ls<CR>:b 
@@ -54,7 +54,7 @@ nnoremap <leader>V :so ~/.vimrc<CR>
 
 set autoread
 set updatetime=750
-" These are the features required-
+
 " * Reload buffer, if file changed on drive
 " * Save file to disk, if buffer modified
 "
