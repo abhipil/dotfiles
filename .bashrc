@@ -61,7 +61,7 @@ function parse_git_dirty {
 	[[ $(git status 2> /dev/null | tail -n1) != "nothing to commit, working tree clean" ]] && echo "*"
 }
 function parse_git_branch {
-	[[ $PWD != $HOME ]] && git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/[\1$(parse_git_dirty)]/"
+	[[ `git rev-parse --show-toplevel` != $HOME ]] && git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/[\1$(parse_git_dirty)]/"
 }
 
 if [ "$color_prompt" = yes ]; then
