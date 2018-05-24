@@ -44,6 +44,13 @@ nnoremap <TAB> <C-w>w
 " `f` Opens disposable buffer ready to read in `ag`
 " Buffer cannot be written to and will be deleted when left
 " :help buftype
+" TODO: While this is nice its not super useful. Just use the terminal instead
+" The following would be nice-
+"   * Use the quickfix buffer to run through the search results
+"   * Highlight the search term
+"   * Open the search results in the right vsplit window(?)
+"   * Open the first file from the results in the left window
+"   * Switch files in the left window using `n`(quickfix)
 nnoremap <leader>f :e projectsearch<CR>:set buftype=nowrite bufhidden=delete<CR>:r !gg 
 
 " `b` Lists buffers ready to switch to
