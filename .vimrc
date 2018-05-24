@@ -38,6 +38,9 @@ nnoremap <leader><Space> :noh<cr>
 highlight OverLength ctermbg=darkblue ctermfg=white guibg=#592929
 match OverLength /\%121v.\+/
 
+" Use TAB to switch windows in Normal mode
+nnoremap <TAB> <C-w>w
+
 " `f` Opens disposable buffer ready to read in `ag`
 " Buffer cannot be written to and will be deleted when left
 " :help buftype
