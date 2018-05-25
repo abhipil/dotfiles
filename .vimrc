@@ -38,6 +38,9 @@ nnoremap <leader><Space> :noh<cr>
 highlight OverLength ctermbg=darkblue ctermfg=white guibg=#592929
 match OverLength /\%121v.\+/
 
+" Delay cts by a few years
+nnoremap ; :
+
 " Use TAB to switch windows in Normal mode
 nnoremap <TAB> <C-w>w
 
@@ -49,11 +52,12 @@ nnoremap <leader>f :e projectsearch<CR>:set buftype=nowrite bufhidden=delete<CR>
 " `b` Lists buffers ready to switch to
 nnoremap <leader>b :ls<CR>:b 
 
-" Delay cts by a few years
-nnoremap ; :
-
 " `V` sources .vimrc
 nnoremap <leader>V :so ~/.vimrc<CR>
+
+" Comment a line in python
+" TODO: comment a line based on file ending
+nnoremap <leader>c 0wi# <ESC>
 
 set autoread
 set updatetime=750
