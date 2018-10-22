@@ -35,6 +35,7 @@ set incsearch
 " Disable highlights until next search
 " https://stackoverflow.com/questions/657447/vim-clear-last-search-highlighting
 nnoremap <leader><Space> :noh<cr>
+set grepprg=git\ grep\ -n
 
 " Highlight lines violating line limit
 " https://stackoverflow.com/a/235970
