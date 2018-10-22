@@ -23,6 +23,9 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 
+" Tab width by filetype
+autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
+
 " Display line number by default
 set nu
 
