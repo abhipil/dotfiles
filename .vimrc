@@ -53,6 +53,9 @@ nnoremap <TAB> <C-w>w
 " :help buftype
 nnoremap <leader>f :e projectsearch<CR>:set buftype=nowrite bufhidden=delete<CR>:r !gg 
 
+nnoremap <leader>n :cnext<CR>
+nnoremap <leader>p :cprev<CR>
+
 " `b` Lists buffers ready to switch to
 nnoremap <leader>b :ls<CR>:b 
 
