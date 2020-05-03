@@ -128,3 +128,4 @@ fi
 export VISUAL=vim
 export EDITOR="$VISUAL"
 export ANDROID_HOME=~/.android/
+set -o vi

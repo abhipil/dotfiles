@@ -64,7 +64,9 @@ nnoremap <leader>V :so ~/.vimrc<CR>
 
 " Comment a line in python
 " TODO: comment a line based on file ending
-nnoremap <leader>c 0wi# <ESC>
+autocmd FileType javascript :let commentchar='//'
+autocmd FileType python :let commentchar='#'
+nnoremap <leader>c 0w:put=commentchar<C-M>
 
 set autoread
 set updatetime=750
