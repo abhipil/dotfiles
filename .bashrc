@@ -16,8 +16,8 @@ HISTCONTROL=ignoreboth
 shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
-HISTFILESIZE=2000
+HISTSIZE=100000
+HISTFILESIZE=8000
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -58,10 +58,10 @@ fi
 
 # git
 function parse_git_dirty {
-	[[ $(git status 2> /dev/null | tail -n1) != "nothing to commit, working tree clean" ]] && echo "*"
+[[ $(git status 2> /dev/null | tail -n1) != "nothing to commit, working tree clean" ]] && echo "*"
 }
 function parse_git_branch {
-	[[ `git rev-parse --show-toplevel` != $HOME ]] && git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/[\1$(parse_git_dirty)]/"
+git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/[\1$(parse_git_dirty)]/"
 }
 
 if [ "$color_prompt" = yes ]; then
@@ -93,7 +93,7 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # colored GCC warnings and errors
-#export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
+export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 # some more ls aliases
 alias ll='ls -alF'
@@ -123,9 +123,25 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+export HISTTIMEFORMAT="%d/%m/%y %T "
 
 # Default to vim please
 export VISUAL=vim
 export EDITOR="$VISUAL"
 export ANDROID_HOME=~/.android/
 set -o vi
+spinsh() {
+	ssh -i '~/keys/sts-keypair-2.pem' ubuntu@$1
+}
+spinsh-test() {
+	ssh -i '~/keys/sts-keypair-testenv.pem' ubuntu@$1
+}
+spinsh-svcs() {
+	ssh -i '~/keys/sts-keypair-services.pem' ubuntu@$1
+}
+export -f spinsh
+export -f spinsh-test
+export -f spinsh-svcs
+
+export PATH=~/.local/bin/aws_completer:$PATH
+complete -C 'aws_completer' aws
