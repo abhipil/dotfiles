@@ -145,4 +145,4 @@ export -f spinsh-svcs
 export PATH=~/.local/bin/aws_completer:$PATH:~/.npm-global/bin
 complete -C "aws_completer" aws
 
-eval "$(keychain -q --agents ssh --eval github_id_ed25519)"
+eval "$(keychain -q --agents ssh --eval github_rsa)"
